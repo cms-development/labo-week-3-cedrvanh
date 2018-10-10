@@ -1,0 +1,16 @@
+<div class="card" *ngIf="recipe">
+    <h3 class="card-header">{{ recipe.title.rendered }}</h3>
+    <div class="card-body">
+      <h5 class="card-title">{{ recipe.acf.intro }}</h5>
+      <h6 class="card-title text-muted">{{ recipe.meta_fields._recipe_subtitle }}</h6>
+      <div innerHTML="{{ recipe.content.rendered }}"></div>
+      <hr>
+      <h5>Extra Info</h5>
+      <p><strong>Ingrediënten: </strong>{{ recipe.meta_fields._recipe_ingredients }}</p>
+      <p><strong>Alcohol: </strong>{{ recipe.acf.alcohol }}</p>
+      <h5>Foto's</h5>
+      <img src="{{ recipe._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url }}">
+      
+    </div>
+    <button class="btn btn-primary mt-2" (click)="goBack()">Keer terug</button>
+</div>

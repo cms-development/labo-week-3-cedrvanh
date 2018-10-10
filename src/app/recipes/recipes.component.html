@@ -1,0 +1,13 @@
+<h2 class="mt-4">Recepten</h2>
+
+<div class="row">
+  <div class="col-4" *ngFor="let recipe of recipes">
+    <div class="card" >
+      <div class="card-body">
+        <h5 class="card-title">{{ recipe.title.rendered }}</h5>
+        <p class="card-text">{{ recipe.meta_fields._recipe_subtitle }}</p>
+        <a routerLink="/recept/{{recipe.id}}" class="btn btn-primary">Bekijk recept</a>
+      </div>
+    </div>
+  </div>
+</div>
